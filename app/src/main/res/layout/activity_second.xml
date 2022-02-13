@@ -9,6 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="30sp"
+        ></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        ></View>
+
+    <TextView
+        android:id="@+id/act_second_txt_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/act_second_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
         ></TextView>
 
 </LinearLayout>
