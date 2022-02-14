@@ -10,7 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RC_Weeks2">
         <activity
-            android:name=".MainActivity"
+            android:name=".TalkPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TalkListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
