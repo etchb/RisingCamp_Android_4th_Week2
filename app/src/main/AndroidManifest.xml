@@ -11,9 +11,10 @@
         android:theme="@style/Theme.RC_Weeks2">
         <activity
             android:name=".TalkPageActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
-            android:name=".TalkListActivity"
+            android:name=".TalkMainActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

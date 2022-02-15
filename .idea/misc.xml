@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable-v24/textbox_border_top.xml" value="0.197" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.197" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.197" />
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable/login_btn_background.xml" value="0.197" />
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable/login_btn_background_normal.xml" value="0.197" />
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/drawable/login_btn_background_pressed.xml" value="0.197" />
@@ -13,6 +16,23 @@
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_login.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_second.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_talk_list.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_talk_main.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_talk_mainn.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/activity_talk_page.xml" value="0.22" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/frag_friend_list_page.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/frag_setting_page.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/frag_shop_page.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/frag_talk_list_page.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/frag_view_page.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/fragment_talk_friend.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/fragment_talk_list.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/fragment_talk_setting.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/fragment_talk_shop.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/fragment_talk_view.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/layout/item_recycler.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/menu/bottom_navi.xml" value="0.2015625" />
+        <entry key="..\:/Users/wanty/AndroidStudioProjects/RC_Weeks2/app/src/main/res/menu/toolbar_menu.xml" value="0.2015625" />
       </map>
     </option>
   </component>
