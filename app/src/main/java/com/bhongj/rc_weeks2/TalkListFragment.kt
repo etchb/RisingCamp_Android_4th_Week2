@@ -37,6 +37,11 @@ class TalkListFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        binding.talkListImgTalkBanner.setImageResource(BannerListItemList[bannerIdx].imgRsc)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.toolbar_menu, menu)
     }

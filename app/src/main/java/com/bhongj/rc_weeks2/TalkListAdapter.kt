@@ -32,7 +32,7 @@ class TalkListAdapter(private val dataList: MutableList<TalkListItem>) :
 
         fun bind(item: TalkListItem) {
             name.text = item.name
-            message.text = item.name
+            message.text = item.message
             img.setImageResource(item.imgRsc)
         }
     }
