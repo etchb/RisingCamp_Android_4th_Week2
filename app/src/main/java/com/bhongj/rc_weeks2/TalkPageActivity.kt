@@ -5,25 +5,25 @@ import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.bhongj.rc_weeks2.databinding.ActivityTalkPageBinding
 
 class TalkPageActivity : AppCompatActivity() {
-    lateinit var binding : ActivityTalkPageBinding
+    lateinit var binding: ActivityTalkPageBinding
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTalkPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show()
 
         setSupportActionBar(binding.tlbTalkPage)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.talkPageBtnAdd.setOnClickListener {
             val txt = binding.talkPageEdtMessage.text.toString()
-            var num : String
-
-            num = try {
+            var num: String = try {
                 txt.toInt()
                 txt
             } catch (e: NumberFormatException) {
@@ -36,6 +36,7 @@ class TalkPageActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
 
         val name = intent.getStringExtra("name")
         val message = intent.getStringExtra("message")
@@ -50,29 +51,14 @@ class TalkPageActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
         val lastMessage = sharedPreferences.getString(name, "defaultName")
-        if (lastMessage != "defaultName"){
+        if (lastMessage != "defaultName") {
             binding.talkPageEdtMessage.setText(lastMessage)
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-    }
-
     override fun onDestroy() {
         super.onDestroy()
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show()
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()

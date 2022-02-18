@@ -2,6 +2,7 @@ package com.bhongj.rc_weeks2
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bhongj.rc_weeks2.databinding.FragmentTalkListBinding
@@ -39,6 +40,8 @@ class TalkListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        Toast.makeText(context, "onStart_Fragment", Toast.LENGTH_SHORT).show()
+
         binding.talkListImgTalkBanner.setImageResource(BannerListItemList[bannerIdx].imgRsc)
     }
 

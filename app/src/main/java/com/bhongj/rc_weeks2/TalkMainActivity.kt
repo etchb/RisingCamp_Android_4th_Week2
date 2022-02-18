@@ -19,7 +19,7 @@ import com.bhongj.rc_weeks2.databinding.FragmentTalkListBinding
 var bannerIdx = 0
 
 class TalkMainActivity : AppCompatActivity() {
-    lateinit var binding : ActivityTalkMainBinding
+    lateinit var binding: ActivityTalkMainBinding
     private lateinit var sharedPreferences: SharedPreferences
     var initCheck = false
 
@@ -27,12 +27,11 @@ class TalkMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTalkMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show()
 
         setSupportActionBar(binding.tlbTalkList)
 
         binding.bottomNav.itemIconTintList = null
-//        binding.tlbTalkList.backgroundTintList = null
-
         initNavigationBar()
     }
 
@@ -45,12 +44,12 @@ class TalkMainActivity : AppCompatActivity() {
 
         binding.bottomNav.run {
             setOnItemSelectedListener {
-                when(it.itemId) {
-                    R.id.bttmenu_friend -> { 
+                when (it.itemId) {
+                    R.id.bttmenu_friend -> {
                         changeFragment(talkFriendFragment)
                         binding.tlbTalkList.title = "친구"
                     }
-                    R.id.bttmenu_talk_list -> { 
+                    R.id.bttmenu_talk_list -> {
                         changeFragment(talkListFragment)
                         binding.tlbTalkList.title = "채팅"
                     }
@@ -78,26 +77,27 @@ class TalkMainActivity : AppCompatActivity() {
     private fun changeFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frmlay_talk_main, fragment) .commit() }
+            .replace(R.id.frmlay_talk_main, fragment).commit()
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun onRestart() {
         super.onRestart()
+        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show()
+
         bannerIdx++
-        if (bannerIdx >= BannerListItemList.size){
+        if (bannerIdx >= BannerListItemList.size) {
             bannerIdx = 0
         }
     }
 
     override fun onStop() {
         super.onStop()
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show()
+
         /* init setting */
         if (initCheck) {
             sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)

@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.bhongj.rc_weeks2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             val age = binding.actMainEdtAge.text.toString().toInt()
             var name = binding.actMainEdtName.text.toString()
 
-            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
             editor.putInt("AGE", age)
             editor.putString("NAME", name)
             editor.apply()

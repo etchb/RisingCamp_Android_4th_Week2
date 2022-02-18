@@ -27,9 +27,6 @@ class TalkFriendFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentTalkFriendBinding.inflate(layoutInflater, container, false)
 
-
-//        setHasOptionsMenu(true)
-
         return binding.root
     }
 }

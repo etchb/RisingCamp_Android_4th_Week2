@@ -25,19 +25,23 @@ class LoginActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("이메일 주소가 맞지 않습니다.")
         builder.setMessage("죄송합니다. 이 이메일 주소를 사용하는\n계정을 찾을 수 없습니다. 다시\n입력하시거나 새로운 계정을 등록하세요.")
-        builder.setPositiveButton("새로운 계정 등록") { dialogInterface: DialogInterface, i: Int ->
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+        builder.setPositiveButton("실패 횟수 초기화") { dialogInterface: DialogInterface, i: Int ->
+            loginFailCnt = 0
+            binding.loginTxtFailCnt.text = loginFailCnt.toString()
         }
         builder.setNegativeButton("다시 시도하기") { dialogInterface: DialogInterface, i: Int ->
-            Toast.makeText(this, "다시 시도하기", Toast.LENGTH_SHORT).show()
+            loginFailCnt++
+            binding.loginTxtFailCnt.text = loginFailCnt.toString()
         }
 
         binding.loginBtnLogin.setOnClickListener {
             run {
                 UserInfoList.forEach {
-                    if(binding.loginEdtUserId.text.toString() == it.userID
-                        && binding.loginEdtUserPw.text.toString() == it.userPW){
-                        Toast.makeText(this, it.userName + " : Login Success", Toast.LENGTH_SHORT).show()
+                    if (binding.loginEdtUserId.text.toString() == it.userID
+                        && binding.loginEdtUserPw.text.toString() == it.userPW
+                    ) {
+                        Toast.makeText(this, it.userName + " : Login Success", Toast.LENGTH_SHORT)
+                            .show()
                         isAutoLogin = true
                         loginFailCnt = 0
                         val intent = Intent(this, TalkMainActivity::class.java)
@@ -47,8 +51,6 @@ class LoginActivity : AppCompatActivity() {
                         return@run
                     }
                 }
-                loginFailCnt++
-                binding.loginTxtFailCnt.text = loginFailCnt.toString()
                 builder.show()
                 Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
             }
@@ -71,16 +73,7 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
-
-//        /* init sharedPreferences */
-//        val editor : SharedPreferences.Editor = sharedPreferences.edit()
-//        editor.putBoolean("isAutoLogin", false)
-//        editor.putString("userName", "it.userName")
-//        editor.apply()
-//        /* init sharedPreferences */
-
         loginFailCnt = sharedPreferences.getInt("loginFailCnt", 0)
-
         if (sharedPreferences.getBoolean("isAutoLogin", true)) {
             val intent = Intent(this, TalkMainActivity::class.java)
             intent.putExtra("userId", sharedPreferences.getString("userId", "defaultId"))
@@ -101,15 +94,13 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show()
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
-        val editor : SharedPreferences.Editor = sharedPreferences.edit()
-
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putBoolean("isAutoLogin", isAutoLogin)
         editor.putInt("loginFailCnt", loginFailCnt)
-        if (isAutoLogin){
+        if (isAutoLogin) {
             editor.putString("userId", binding.loginEdtUserId.text.toString())
             editor.putString("userPw", binding.loginEdtUserPw.text.toString())
-        }
-        else{
+        } else {
             editor.putString("userId", "defaultId")
             editor.putString("userPw", "defaultPw")
         }
@@ -118,21 +109,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show()
+
+        binding.loginEdtUserId.setText("")
+        binding.loginEdtUserPw.setText("")
     }
-
-    override fun onRestart() {
-        super.onRestart()
-        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show()
-    }
-
-
-    //TODO : 소프트 키보드 올라올 때, 화면 위로 올라가는 방법은?
-    //TODO : TextInputEditText 에서 하단 box 지우고 corner 주는 방법
-    //TODO : 중간 약관에 링크 거는 방법
 }

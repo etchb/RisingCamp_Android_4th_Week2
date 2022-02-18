@@ -27,9 +27,6 @@ class TalkShopFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentTalkShopBinding.inflate(layoutInflater, container, false)
 
-
-//        setHasOptionsMenu(true)
-
         return binding.root
     }
 }
